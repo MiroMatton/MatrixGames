@@ -1,29 +1,9 @@
 <script lang="ts">
-  import { onMount } from "svelte";
-  import GameCard from "./components/GameCard.svelte";
-  let games;
-
-  onMount(async () => {
-    fetch("http://localhost:8000/games")
-      .then((response) => response.json())
-      .then((data) => {
-        games = data;
-        console.log(data);
-      })
-      .catch((error) => {
-        console.log(error);
-        return [];
-      });
-  });
+  import Library from "./components/Library.svelte";
 </script>
 
 <main>
-  <h1>Games</h1>
-  {#if games}
-    {#each games as game}
-      <GameCard title={game.title} />
-    {/each}
-  {/if}
+  <Library />
 </main>
 
 <style lang="scss">
@@ -31,13 +11,5 @@
   main {
     text-align: center;
     padding: 1em;
-    background-color: color.$background;
-    color: color.$gray;
-
-    h1 {
-      color: color.$white;
-      font-size: 3em;
-      font-weight: 100;
-    }
   }
 </style>
