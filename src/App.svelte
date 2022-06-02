@@ -1,5 +1,6 @@
 <script lang="ts">
   import { onMount } from "svelte";
+  import GameCard from "./components/GameCard.svelte";
   let games;
 
   onMount(async () => {
@@ -18,13 +19,11 @@
 
 <main>
   <h1>Games</h1>
-  <ul>
-    {#if games}
-      {#each games as game}
-        <li>{game.description}</li>
-      {/each}
-    {/if}
-  </ul>
+  {#if games}
+    {#each games as game}
+      <GameCard title={game.title} />
+    {/each}
+  {/if}
 </main>
 
 <style lang="scss">
