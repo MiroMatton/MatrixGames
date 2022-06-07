@@ -7,8 +7,7 @@
     fetch("http://localhost:8000/games")
       .then((response) => response.json())
       .then((data) => {
-        games = data;
-        console.log(data);
+        games = data.documents;
       })
       .catch((error) => {
         console.log(error);
