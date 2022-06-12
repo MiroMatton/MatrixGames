@@ -12,5 +12,5 @@ app.get("/games", getGames)
   .get("/games/:id", getGame)
 
 app.use(abcCors());
-app.start({ port: 8080 })
+app.start({ hostname: "0.0.0.0", port: 8000 })
 console.log("http://localhost:8080/");

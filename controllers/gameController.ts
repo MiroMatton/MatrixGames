@@ -65,3 +65,15 @@ export const getGames = async (ctx: Context) => {
         return ctx.string('something went wrong', 500);
     }
 };
+
+export const flashGame = async (ctx: Context) => {
+    console.log("flashing ...");
+    const cmd = Deno.run({
+        cmd: ["esptool.py", "--port", "/dev/ttyUSB0", "--baud", "460800", "write_flash", "--flash_size=detect", "0x10000", "./games/esp32Blinking.ino.esp32.bin"],
+        stdout: "piped",
+
+    });
+
+    await cmd.status();
+    return ctx.string(new TextDecoder().decode(await cmd.output()), 200);
+}
