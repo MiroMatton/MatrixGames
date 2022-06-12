@@ -36,20 +36,21 @@ export const playGame = async (ctx: Context) => {
     const { game } = ctx.params;
     const path = "./games/" + game + ".ino.esp32.bin";
 
+    /*
     try {
         const gameExist = await Deno.open(path);
-        console.log("is game already installed?: ", gameExist)
         if (gameExist) {
-            let log = await flashGame(game);
-            console.log("flash: ", log);
+            await flashGame(game);
+            return ctx.string("installed", 200);
         }
 
     } catch (e) {
         if (e instanceof Deno.errors.NotFound) {
-            let log = await downloadGame(game);
-            console.log("download: ", log);
+            await downloadGame(game);
+            return ctx.string("downloaded", 200);
         }
     }
+    */
 }
 
 export const testFlasher = async () => {

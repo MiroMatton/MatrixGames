@@ -29,8 +29,6 @@ export const fetchGame = async (id: String) => {
         const dataResponse = await fetch(URI, options);
         const game = await dataResponse.json();
 
-        console.log("tewst", game);
-
         if (game.document !== null) {
             return game
         } else {
@@ -52,7 +50,6 @@ export const fetchGames = async () => {
         options.body = JSON.stringify(query);
         const dataResponse = await fetch(URI, options);
         const games = await dataResponse.json();
-        console.log(games);
 
         if (games.documents !== null) {
             return games
