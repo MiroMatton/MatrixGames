@@ -1,16 +1,20 @@
-import { Application, Context } from "https://deno.land/x/abc@v1.3.3/mod.ts";
+import { Application } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 import { abcCors } from "https://deno.land/x/cors/mod.ts";
 import {
   getGame,
-  getGames
+  getGames,
+  playGame,
+  testFlasher
 } from './controllers/gameController.ts';
 
-const apiKey = "7QDqXUaBOjZEBQHNYf5Nb6xadEwY8FvWJdMILqs82EyU5X4ChZ4VqdVCzkfQy6vP";
 const app = new Application();
+const port = 8000;
 
 app.get("/games", getGames)
   .get("/games/:id", getGame)
+  .get("/play/:game", playGame)
+  .get("test", testFlasher)
 
 app.use(abcCors());
-app.start({ hostname: "0.0.0.0", port: 8000 })
-console.log("http://localhost:8080/");
+app.start({ hostname: "0.0.0.0", port: port })
+console.log("http://localhost:" + port);
