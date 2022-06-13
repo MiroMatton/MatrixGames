@@ -1,4 +1,4 @@
-import { config } from "https://deno.land/x/dotenv/mod.ts";
+import { config } from "https://deno.land/x/dotenv@v3.2.0/mod.ts";
 
 const { DATA_API_KEY, APP_ID } = config();
 
@@ -16,7 +16,7 @@ const options = {
     body: ""
 };
 
-export const fetchGame = async (id: String) => {
+export const fetchGame = async (id: string) => {
     try {
         const URI = `${BASE_URI}/findOne`;
         const query = {
@@ -35,6 +35,7 @@ export const fetchGame = async (id: String) => {
             return
         }
     } catch (err) {
+        console.log("error fetchGame", err)
         return;
     }
 }
@@ -57,6 +58,7 @@ export const fetchGames = async () => {
             return
         }
     } catch (err) {
+        console.log("error fetchGames", err)
         return
     }
 }

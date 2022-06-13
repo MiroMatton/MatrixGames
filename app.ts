@@ -1,6 +1,6 @@
 import { Application } from "https://deno.land/x/abc@v1.3.3/mod.ts";
-import { abcCors } from "https://deno.land/x/cors/mod.ts";
-import { serve } from "https://deno.land/std/http/mod.ts";
+import { abcCors } from "https://deno.land/x/cors@v1.2.2/mod.ts";
+import { serve } from "https://deno.land/std@0.143.0/http/mod.ts";
 
 import {
   getGame,
