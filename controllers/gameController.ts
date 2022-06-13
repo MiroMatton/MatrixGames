@@ -1,7 +1,7 @@
 import { Context } from "https://deno.land/x/abc@v1.3.3/mod.ts";
 
 import { fetchGame, fetchGames } from "./apiController.ts";
-import { flashGame, downloadGame } from "../logic.ts";
+import { flashGame } from "../logic.ts";
 
 export const getGame = async (ctx: Context) => {
     try {
@@ -32,31 +32,9 @@ export const getGames = async (ctx: Context) => {
     }
 };
 
-export const playGame = async (ctx: Context) => {
-    const { game } = ctx.params;
-    const path = "./games/" + game + ".ino.esp32.bin";
-
-    /*
-    try {
-        const gameExist = await Deno.open(path);
-        if (gameExist) {
-            await flashGame(game);
-            return ctx.string("installed", 200);
-        }
-
-    } catch (e) {
-        if (e instanceof Deno.errors.NotFound) {
-            await downloadGame(game);
-            return ctx.string("downloaded", 200);
-        }
-    }
-    */
-}
-
-export const testFlasher = async () => {
+export const testFlasher = async (ctx: Context) => {
     const tester = "esp32Blinking";
-    const path = "./games/" + tester + ".ino.esp32.bin";
+    await flashGame(tester);
 
-    let log = await flashGame(tester);
-    console.log("tester: ", log);
+    return ctx.string('test installed', 200)
 }
