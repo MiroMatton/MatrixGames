@@ -1,4 +1,6 @@
 <h1 align="center"> MatrixGames</h1>
+
+<p align="center">
 <img src="./assets/banner.png" width="100%">
 <img src="https://img.shields.io/badge/made%20by-MiroMatton-blue">
 <img src="https://img.shields.io/github/license/MiroMatton/MatrixGames">
@@ -6,6 +8,7 @@
 <img src="./assets/Svelte.svg" width="3%">
 <img src="./assets/Deno.svg" width="4%">
 <img src="./assets/mongo.png" width="4%">
+</p>
 
 # Beschrijving
 
