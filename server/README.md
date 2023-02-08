@@ -8,14 +8,6 @@ Gemakelijkere manier om verschillende esp32-I2S games te spelen om uw 64x32 matr
 - Git repro voor MatrixGames deno server.
 - draai lokaal en host of te wel lokaal of gebruik online site (url: https://2022-wta-matrixgames.vercel). 
 
-## Clonen git repo
-
-- Clone de repo, door in je terminal dit commando uit tevoeren.
-
-```shell
-git clone https://gitlab.com/2122-wta-miromatton/matrixgames-server.git
-```
-
 # requirements
 
 - deno globaal geinstaleerd

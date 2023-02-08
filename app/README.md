@@ -9,14 +9,6 @@ Gemakelijkere manier om verschillende esp32-I2S games te spelen om uw 64x32 matr
 - moet de server om te gebruiken!
 - kan ook vie online website: https://2022-wta-matrixgames.vercel.app/
 
-## Clonen git repo
-
-- Clone de repo, door in je terminal dit commando uit te voeren.
-
-```shell
-git clone https://gitlab.com/miro.matton/2022-wta-matrixgames.git
-```
-
 # installatie
 
 volg deze stappen om de website lokaal te draaien.
